@@ -6,7 +6,6 @@ with open("day5.txt", "r") as file:
         stacks[int(line[0])] = [i for i in line[1:]]
         line = data.pop(0).split(' ')
     moves = []
-    print(stacks)
     for line in data:
         line = line.split(' ')
         moves.append([int(line[1]), int(line[3]), int(line[5])])
@@ -21,7 +20,6 @@ with open("day5.txt", "r") as file:
         #part 2
         stacks[toS].extend(stacks[fromS][-x:])
         del stacks[fromS][len(stacks[fromS])-x:]
-
     res = ""
     for key, val in stacks.items():
         res += val[-1]
